@@ -2,3 +2,28 @@
 2. Git团队开发， 优势是分布式的资源库管理工具
 首先本地有一个仓库，然后是远程仓库
 3. Github是开源世界最大代码托管工具
+
+4. 开发步骤
+
+4.1 添加jar包
+坐标 gav 
+<dependency>
+    <groupId>org.mybatis</groupId>
+    <artifactId>mybatis</artifactId>
+    <version>3.4.1</version>
+</dependency>
+
+4.2 添加MyBatis 的配置文件
+4.3 测试连接
+从 XML 中构建 SqlSessionFactory
+通过SqlSessionFactory.openSession()创建SqlSession
+sqlSession调用增删改查的方法
+
+5. 封装
+String ename = rs.getColumnName(1);
+循环Emp的属性
+Field[]  fileds = clazzz.getDeclaredFields();
+
+
+
+

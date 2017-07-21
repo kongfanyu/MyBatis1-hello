@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.dao.EmpMapper">
+  <select id="selectEmp" resultType="com.shop.entity.Emp">
+    select * from emp where id = #{id}
+  </select>
+  <!-- 
+  1. 表示获取产生的主键
+  2.keyProperty 封装到哪个属性，id
+   -->
+  <insert id="saveEmp" useGeneratedKeys="true" keyProperty="id">
+  	insert into emp(ename,job,sal,hiredate,deptNo)values(#{ename},#{job},#{sal},#{hiredate},#{deptNo});
+  </insert>
+  
+  <delete id="deleteEmp">
+  	delete from emp where id=#{xyz}
+  </delete>
+  
+  <update id="updateEmp">
+  	update emp set ename=#{ename}, job=#{job},sal=#{sal} where id=#{id}
+  </update>
+  <update id="updateEname">
+  	update emp set ename=#{ename} where id=#{id}
+  </update>
+</mapper>
